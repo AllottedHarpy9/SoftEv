@@ -18,7 +18,7 @@ public class DataTypetest {
 		Tokenizer t1 = CobolParser.tokenizer();
 		Parser p = CobolParser.start();
 		t.setString("01  entry_char   redefines entry_number pic x(16).");
-		t1.setString("fghnbmhj && £@");
+		t1.setString("01 fghnbmhj ()");
 		Assembly in = new TokenAssembly(t);
 		Assembly out = p.bestMatch(in);
 		
