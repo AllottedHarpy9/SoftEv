@@ -69,7 +69,7 @@ public class RedefinesDescriptionAssembler extends Assembler {
 		// else if(  (type >= 2  && type <= 49)||type==77 ) {
 		// 	 c.setRecordDescriptionSymbol(null);
 		//	 c.setRecordDescriptionPicDesc(null);
-		 
+ 
 		 
 		  //t = (Token) a.nextElement();
 		 //System.out.println(t);

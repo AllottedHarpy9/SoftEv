@@ -57,7 +57,7 @@ public class RecordDescriptionAssembler extends Assembler {
 			 			description = "Sign";
 			 		}
 			 		else if(symbol.equals("p")){
-			 			description = "Assumed Decimal";
+			 			description = "Decimal Scaling Poistion";
 			 		}
 			 		c.setRecordDescriptionSymbol(symbol);
 			 		c.setRecordDescriptionPicDesc( description); 
@@ -75,14 +75,11 @@ public class RecordDescriptionAssembler extends Assembler {
 			 case ".":
 				 if(length==0) {
 					 length=1;
-				 }
-				 
+				 }				 
 				 c.setRecordDescriptionLength(length);
 				 break;
 			 case "(":
-				 t= (Token) a.nextElement();
-				 //System.out.println("number that is value "+t);
-				 
+				 t= (Token) a.nextElement();		 
 				 c.setRecordDescriptionLength(length+(int) t.nval());
 				 break;
 			 

@@ -41,14 +41,30 @@ public Literal(String s) {
 	literal = new Token(s);
 }
 
+
+/**
+ * Constructs a literal that will match the specified int.
+ *
+ * @param   int   the int to match as a token
+ *
+ * @return   a literal that will match the specified int
+ */
+
 public Literal(int i) {
 	literal = new Token(i);
 }
 
 
+/**
+ * Constructs a double that will match the specified double.
+ *
+ * @param   double   the double to match as a token
+ *
+ * @return   a literal that will match the specified double
+ */
+
 public Literal(double d) {
 	literal = new Token(d);
-	// TODO Auto-generated constructor stub
 }
 
 /**

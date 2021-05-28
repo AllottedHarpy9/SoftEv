@@ -74,7 +74,14 @@ public class CobolParser {
 		a.add(new Empty());
 		return a;
 	}
-
+	
+	/*
+	 * Return a parser that will recognise the grammar:
+	 *
+	 *   contains the keyword pic
+	 *
+	 */
+	
 	private Parser recordDescription() {
 		Sequence s = new Sequence();
 		s.add(new Num());
@@ -83,10 +90,17 @@ public class CobolParser {
 		s.setAssembler(new RecordDescriptionAssembler());
 		return s;
 	}
+	
+	/*
+	 * Return a parser that will recognise the grammar:
+	 *
+	 *    contains the redefines keyword
+	 *
+	 */
 
 	private Parser redefinesDescription() {
 		Sequence s = new Sequence();
-		s.add(new Literal(1.0).discard());
+		s.add(new Num().discard());
 		s.add(new Word());
 		s.add(new CaselessLiteral("redefines").discard());
 		s.add(new Word());
@@ -96,7 +110,7 @@ public class CobolParser {
 
 
 	/*
-	 * Return a parser that will recognize the grammar:
+	 * Return a parser that will recognise the grammar:
 	 *
 	 *    Program Identifier = Word
 	 *
@@ -126,9 +140,9 @@ public class CobolParser {
 	}
 
 	/*
-	 * Return a parser that will recognize the grammar:
+	 * Return a parser that will recognise the grammar:
 	 *
-	 *    Section Name = Word
+	 *    Section Name
 	 *
 	 */
 	protected Parser SectionName() {
@@ -161,6 +175,12 @@ public class CobolParser {
 		return s;
 	}
 
+	
+	
+	/*
+	 *Recognises remark grammer but does not yet get the details on the next line.
+	 *
+	 */
 	protected Parser remarks() {
 		Sequence s = new Sequence();
 		s.add(new CaselessLiteral("remarks"));
@@ -196,17 +216,27 @@ public class CobolParser {
 		t.wordState().setWordChars(' ', ' ', false);
 		return t;
 	}
+	
+	/*
+	* Return a parser that will recognise the grammar:
+	*
+	*  value = constant 
+	*
+	*/
 
 	protected Parser constantValue() {
 		//System.out.println("constantValue()");
 		Sequence s = new Sequence();
-		s.add(new Num() );
+		s.add(new Literal(88.0));
 		s.add(new Word() );
 		s.add(new CaselessLiteral("value") );
 		s.add(new Num() );
 		s.setAssembler(new ConstantValueAssembler());
 		return s;
 		}
+	
+	
+	
 	/*
 	* Return a parser that will recognise the grammar:
 	*

@@ -179,8 +179,8 @@ public class XMLPayload {
  		
  		Element recordRedefined=doc.createElement("Record");
 
- 		
- 			Element recordName=doc.createElement("Name");
+	
+ 		Element recordName=doc.createElement("Name");
  				recordName.appendChild(doc.createTextNode(redefinedName));
  				recordRedefined.appendChild(recordName);
  				
@@ -214,49 +214,23 @@ public class XMLPayload {
 		  	recordDescriptionElement.appendChild(recordLevel);
 		
 		
-	Element recordName=doc.createElement("Name");
+		Element recordName=doc.createElement("Name");
 		  	recordName.appendChild(doc.createTextNode(recordDescription));
 		  	recordDescriptionElement.appendChild(recordName);
 		  
   
-	 Element recordValue=doc.createElement("Length");
-	 		 recordValue.appendChild(doc.createTextNode(Integer.toString(recordDescriptionLength)));
-		  	 recordDescriptionElement.appendChild(recordValue); 
+	    Element recordValue=doc.createElement("Length");
+	 		recordValue.appendChild(doc.createTextNode(Integer.toString(recordDescriptionLength)));
+	 		recordDescriptionElement.appendChild(recordValue); 
 
 
 		  
-		  Element recordType=doc.createElement("Type");
+		Element recordType=doc.createElement("Type");
 		  	recordType.appendChild(doc.createTextNode(recordDescriptionPicDesc));
 		  	recordDescriptionElement.appendChild(recordType); 
-		  
-		   	  		  
+	  
+	   	  		  
 		  rootElement.appendChild(recordDescriptionElement);
-		  
-		 
-// 		Element recordDescriptionElement = doc.createElement("Data_Type");
-// 		
-// 		Attr attrType4 = doc.createAttribute("Type");
-//		attrType4.setValue(Integer.toString(type));
-//		recordDescriptionElement.setAttributeNode(attrType4);
-//		
-// 		Attr attrType = doc.createAttribute("Name");
-//		attrType.setValue(recordDescription);
-//		recordDescriptionElement.setAttributeNode(attrType);
-//		
-//		Attr attrType1 = doc.createAttribute("Length");
-//		attrType1.setValue(Integer.toString(recordDescriptionLength));
-//		recordDescriptionElement.setAttributeNode(attrType1);
-//		if(type == 1) {
-//			//if(!recordDescriptionSymbol.equals(".")); 
-//		Attr attrType2 = doc.createAttribute("Symbol");
-//		attrType2.setValue(recordDescriptionSymbol);
-//		recordDescriptionElement.setAttributeNode(attrType2);
-//		
-//		Attr attrType3 = doc.createAttribute("Pic_Description");
-//		attrType3.setValue(recordDescriptionPicDesc);
-//		recordDescriptionElement.setAttributeNode(attrType3);
-//		}
-//		rootElement.appendChild(recordDescriptionElement);
 	}
 	
 	void addRemarksElement(String remarks) {

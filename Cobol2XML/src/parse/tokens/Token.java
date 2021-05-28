@@ -112,6 +112,7 @@ public Token (TokenType ttype, String sval, double nval) {
 	this.sval = sval;
 	this.nval = nval;
 }
+
 /**
  * Returns true if the supplied object is an equivalent token.
  *
@@ -235,6 +236,7 @@ public TokenType ttype() {
  *
  * @return  an object that represents the value of this token
  */
+@SuppressWarnings("deprecation")
 public Object value() {
 	if (ttype == TT_NUMBER) {
 		return new Double(nval);
